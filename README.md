@@ -4,7 +4,7 @@
 This system is a customer-service AI agent that answers questions about a company's products and policies, grounded entirely in the company's own data. Product manuals arrive as PDFs and are parsed, enriched with catalogue metadata, and indexed for hybrid vector search. Exact business facts (return, exchange, and warranty policies, and customer service history) live in Delta tables and are exposed to the agent as governed Unity Catalog SQL functions. A tool-calling agent built on MLflow's `ResponsesAgent` decides, per question, whether to search the documentation, call a function, or both. It is then evaluated, registered to Unity Catalog, deployed to a Model Serving endpoint, and put in front of users through a Databricks App chat interface.
 
 ## Architecture
-![Architecture](docs/images/architecture.png)
+![Architecture](docs/images/architecture(1).png)
 
 ## Data Flow
 1. **Ingestion:** `02_Parse_PDF_Docs.py` reads every product PDF from a Unity Catalog Volume, extracts the text with PyPDF2, and writes one row per product to `product_docs`.
